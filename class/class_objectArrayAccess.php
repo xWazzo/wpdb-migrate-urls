@@ -1,9 +1,9 @@
 <?php
 /**
-* @author Carlos González Front End Ninja
+* @author xWaZzo @ Front End Ninja
 * http://frontend.ninja
 *
-* Allow objects to work as Array and activate Iterator properties.
+* Allow objects to work as an Array and activate Iterator properties.
 *
 * Read more:
 *   http://de.php.net/manual/en/class.arrayaccess.php 

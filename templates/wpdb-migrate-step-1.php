@@ -45,17 +45,17 @@ if(!empty($sMessage)){
       else: 
         $success    = wpdb_migration_status();
 
-        $GithubUrl   = "https://github.com/FrontendNinja";
+        $GithubUrl   = "https://github.com/xWazzo";
         $FenUrl      = "https://frontend.ninja";
         $step2Text   = __('Well done! :D Piece of cake, right?', "wpdb-migrate-urls");
         $step2Text  .= __("<br> <a href='$GithubUrl' target='_blank'>Fork us on Github</a>", "wpdb-migrate-urls");
-        $step2Text  .= __("<br> Wordpress database Migrate was made by <a href='$FenUrl' target='_blank'>frontend.ninja</a>", "wpdb-migrate-urls");
+        $step2Text  .= __("<br> Wordpress database Migrate was made by xWaZzo @<a href='$FenUrl' target='_blank'>frontend.ninja</a>", "wpdb-migrate-urls");
         echo "<p>$step2Text</p>";
       endif; ?>
     </div>
     <div style="width: 50%; float: left; padding: 0 15px;"><?php
       if(!isset($_POST['new-url'])): ?>
-        <input id="submit-url" type="submit" name="submit-url" value="<?php echo __( 'Migrate Database URLs', "wpdb-migrate-urls" ); ?>" />
+        <input id="submit-url" type="submit" name="submit-url" value="<?php echo __( 'Migrate Database URLs!', "wpdb-migrate-urls" ); ?>" />
         <button name="wpdb-migrate-hide" id="wpdb-migrate-hide" value="true"><?php echo __('Hide this forever', "wpdb-migrate-urls"); ?></button><?php 
       else:
         $sMigrateAgainUrl = $sFullActualUrl;

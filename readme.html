@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h2 id="whenshouldyouusewpdbmigrateurls">When should you use WPDB Migrate URLs?</h2>
+
+<p>If you <strong>can not access the backend of your wordpress</strong> because it has your http://old.domain and you need a <strong>secure and easy way</strong> to update your database to your http://new.domain this library is for you.</p>
+
+<p><strong>Use this lib when &#8220;wp-migrate-db&#8221; plugin in is not an alternative.</strong></p>
+
+<h2 id="shortdescription">Short description</h2>
+
+<p>Migrating a Wordpress theme to a new host shouldn&#8217;t be a pain in the ass, that&#8217;s why I created this library to help myself and everyone else who needs to migrate a wordpress in seconds without any issues.</p>
+
+<p><strong>Heads up!</strong> Before you start remember to backup your database. If you lose anything It will be an Epic Facepalm because of your laziness.</p>
+
+<h1 id="wordpressdatabasemigrateurls">Wordpress Database Migrate URLs</h1>
+
+<p>WPDB Migrate URLs is a <strong>front end solution</strong> created to easily migrate urls and <a href="http://php.net/manual/es/function.serialize.php">serialized php</a> data from your www.old.domain to your www.new.domain.</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+<li>Replace URLs from one domain to another Fast and Easy.</li>
+<li>Access to the FrontEnd panel from a custom url for securty purposes.</li>
+<li>FrontEnd button to remove the library access after usage to avoid security issues.</li>
+<li>Serialized PHP and Revolution Slider Support! :D</li>
+</ul>
+
+<h2 id="instalationandusage">Instalation and Usage</h2>
+
+<p>Since you cannot access your <em>/wp-admin</em> when your database still has the <em>old.domain</em>, you will have to install this library in your theme folder rather than plugins folder.</p>
+
+<pre><code>…/wp-content/themes/myTheme/lib/wpdb-migrate-urls-x.x.x
+</code></pre>
+
+<p>Simple <code>require_once</code> the file <strong>wpdb-migrate-urls.php</strong> after the body tag of your wordpress theme. Note that you will have to change x.x.x to the current version.</p>
+
+<p>Code Example: </p>
+
+<p><code>&lt;body&gt;
+      &lt;?php 
+      $wpdb_mu_relative_path = &quot;path/to/wpdb-migrate-urls/wpdb-migrate-urls.php&quot;;
+      if(file_exists(dirname( __FILE__ ) . &quot;/$wpdb_mu_relative_path&quot;)) require_once(&quot;$wpdb_mu_relative_path&quot;); ?&gt;
+    …</code></p>
+
+<p>Now you will be able to see a form under anypage if you add &#8220;<strong>?wpdb_migrate</strong>&#8221; at the end of your url. Ex. &#8220;www.new.domain/<strong>?wpdb_migrate</strong>&#8221;.</p>
+
+<p>Just fill the input with your new url and click &#8220;Migrate Database URLs!&#8221;.</p>
+
+<p>That&#8217;s It! Fast an easy as It should be :)</p>
+
+<h2 id="howitworks">How it works?</h2>
+
+<p>The library use MySQL to change every www.old.domain to your www.new.domain under the tables:</p>
+
+<pre><code>wp_options, wp_post, wp_postmeta, wp_revslider_slides and wp_revslider_static_slides.
+</code></pre>
+
+<p><strong>Note:</strong> &#8220;wp_&#8221; also known as &#8220;wordpress database prefix&#8221; is retrieved dynamically by the library functions so you won&#8217;t have any issues if you have changed it on your installation to something custom.</p>
+
+<hr />
+
+<p>If you have any issues or questions don&#8217;t hesitate to write me and I will do my best to help you and improve this library.</p>
+
+</body>
+</html>
