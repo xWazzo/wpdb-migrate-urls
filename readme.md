@@ -34,7 +34,9 @@ Code Example:
       <?php 
       $wpdb_mu_relative_path = "path/to/wpdb-migrate-urls/wpdb-migrate-urls.php";
       if(file_exists(dirname( __FILE__ ) . "/$wpdb_mu_relative_path")) require_once("$wpdb_mu_relative_path"); ?>
-    …```
+    …
+```
+
 
 Now you will be able to see a form under anypage if you add "**?wpdb_migrate**" at the end of your url. Ex. "www.new.domain/**?wpdb_migrate**".
 
